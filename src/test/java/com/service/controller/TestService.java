@@ -37,7 +37,7 @@ public class TestService {
     @Test
     public void testsayHei(){
 
-        String expactReturnValue = null; // You should put the expect String type value here.
+        String expactReturnValue = "hi,nice to meet you."; // You should put the expect String type value here.
 
         // You should put the parameter here, in such footprint: serviceImpl.sayHei(String name)
         String returnValue = serviceImpl.sayHei(null);
