@@ -17,7 +17,7 @@ public class ServiceDelegate{
     public String sayHei(String name){
 
         // Do Some Magic Here!
-        return "hi, nice to meet you.";
+        return "hi,nice to meet you.";
     };
 
 
