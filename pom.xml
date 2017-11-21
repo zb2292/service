@@ -4,11 +4,11 @@
         xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.service</groupId>
-    <artifactId>service</artifactId>
+    <artifactId>ffff</artifactId>
     <version>1.0.0</version>
     <packaging>jar</packaging>
 
-    <name>service</name>
+    <name>ffff</name>
     <url>http://maven.apache.org</url>
 
     <properties>
@@ -35,11 +35,6 @@
         <dependency>
             <groupId>com.huawei.paas.cse</groupId>
             <artifactId>cse-solution-service-engine</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>io.servicecomb</groupId>
-            <artifactId>provider-pojo</artifactId>
         </dependency>
 
         <dependency>
@@ -112,4 +107,3 @@
         </plugins>
     </build>
 </project>
-

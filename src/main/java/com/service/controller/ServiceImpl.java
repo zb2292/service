@@ -2,45 +2,64 @@ package com.service.controller;
 
 import com.service.model.Person;
 
+import javax.ws.rs.core.MediaType;
 import org.springframework.beans.factory.annotation.Autowired;
-import io.servicecomb.provider.pojo.RpcSchema;
+import org.springframework.web.bind.annotation.*;
 
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.CsePojoCodegen", date = "2017-11-20T09:05:08.327Z")
+import io.servicecomb.provider.rest.common.RestSchema;
 
-@RpcSchema(schemaId = "service")
-public class ServiceImpl implements Service{
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.CseSpringCodegen", date = "2017-11-21T06:23:28.856Z")
+
+@RestSchema(schemaId = "service")
+@RequestMapping(path = "/ffff", produces = MediaType.APPLICATION_JSON)
+public class ServiceImpl {
 
     @Autowired
-    private ServiceDelegate serviceDelegate;
+    private ServiceDelegate userServiceDelegate;
 
 
-    public Integer add(Integer a, Integer b) {
+    @RequestMapping(value = "/add",
+        produces = { "application/json" }, 
+        method = RequestMethod.GET)
+    public Integer add( @RequestParam(value = "a", required = true) Integer a, @RequestParam(value = "b", required = true) Integer b){
 
-        return serviceDelegate.add(a, b);
+        return userServiceDelegate.add(a, b);
     }
 
 
-    public String sayHei(String name) {
+    @RequestMapping(value = "/sayhei",
+        produces = { "application/json" }, 
+        method = RequestMethod.GET)
+    public String sayHei( @RequestHeader(value="name", required=true) String name){
 
-        return serviceDelegate.sayHei(name);
+        return userServiceDelegate.sayHei(name);
     }
 
 
-    public String sayHello(String name) {
+    @RequestMapping(value = "/sayhello/{name}",
+        produces = { "application/json" }, 
+        method = RequestMethod.POST)
+    public String sayHello( @PathVariable("name") String name){
 
-        return serviceDelegate.sayHello(name);
+        return userServiceDelegate.sayHello(name);
     }
 
 
-    public String sayHi(String name) {
+    @RequestMapping(value = "/sayhi",
+        produces = { "application/json" }, 
+        method = RequestMethod.GET)
+    public String sayHi( @RequestParam(value = "name", required = true) String name){
 
-        return serviceDelegate.sayHi(name);
+        return userServiceDelegate.sayHi(name);
     }
 
 
-    public String saySomething(String prefix, Person user) {
+    @RequestMapping(value = "/saysomething",
+        produces = { "application/json" }, 
+        method = RequestMethod.POST)
+    public String saySomething( @RequestParam(value = "prefix", required = true) String prefix, @RequestBody Person user){
 
-        return serviceDelegate.saySomething(prefix, user);
+        return userServiceDelegate.saySomething(prefix, user);
     }
 
 }

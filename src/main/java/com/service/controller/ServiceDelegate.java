@@ -1,23 +1,23 @@
 package com.service.controller;
 
+import org.springframework.stereotype.Component;
 import com.service.model.Person;
 
-import org.springframework.stereotype.Component;
 
 @Component
-public class ServiceDelegate{
+public class ServiceDelegate {
 
-    public Integer add(Integer a, Integer b){
+    public Integer add(Integer a,Integer b){
 
         // Do Some Magic Here!
         return null;
     };
 
 
-    public String sayHei(String name){
+    public String sayHei( String name){
 
         // Do Some Magic Here!
-        return "hi,nice to meet you.";
+        return null;
     };
 
 
@@ -35,7 +35,7 @@ public class ServiceDelegate{
     };
 
 
-    public String saySomething(String prefix, Person user){
+    public String saySomething(String prefix,Person user){
 
         // Do Some Magic Here!
         return null;
